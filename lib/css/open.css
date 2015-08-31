@@ -1,0 +1,202 @@
+.bs-open {
+    position: relative;
+    padding: 45px 15px 15px;
+    margin: 0 -15px 15px;
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0;
+    -webkit-box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05)
+}
+.bs-open:after {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #959595;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    content: "Open Tickets"
+}
+.bs-open-padded-bottom {
+    padding-bottom: 24px
+}
+.bs-open+.highlight,
+.bs-open+.zero-clipboard+.highlight {
+    margin: -15px -15px 15px;
+    border-width: 0 0 1px;
+    border-radius: 0
+}
+@media (min-width: 768px) {
+    .bs-open {
+        margin-right: 0;
+        margin-left: 0;
+        background-color: #fff;
+        border-color: #ddd;
+        border-width: 1px;
+        border-radius: 4px 4px 0 0;
+        -webkit-box-shadow: none;
+        box-shadow: none
+    }
+    .bs-open+.highlight,
+    .bs-open+.zero-clipboard+.highlight {
+        margin-top: -16px;
+        margin-right: 0;
+        margin-left: 0;
+        border-width: 1px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px
+    }
+    .bs-open-standalone {
+        border-radius: 4px
+    }
+}
+.bs-open .container {
+    width: auto
+}
+.bs-open>.alert:last-child,
+.bs-open>.form-control:last-child,
+.bs-open>.jumbotron:last-child,
+.bs-open>.list-group:last-child,
+.bs-open>.navbar:last-child,
+.bs-open>.panel:last-child,
+.bs-open>.progress:last-child,
+.bs-open>.table-responsive:last-child>.table,
+.bs-open>.table:last-child,
+.bs-open>.well:last-child,
+.bs-open>blockquote:last-child,
+.bs-open>ol:last-child,
+.bs-open>p:last-child,
+.bs-open>ul:last-child {
+    margin-bottom: 0
+}
+.bs-open>p>.close {
+    float: none
+}
+.bs-open-type .table .type-info {
+    color: #767676;
+    vertical-align: middle
+}
+.bs-open-type .table td {
+    padding: 15px 0;
+    border-color: #eee
+}
+.bs-open-type .table tr:first-child td {
+    border-top: 0
+}
+.bs-open-type h1,
+.bs-open-type h2,
+.bs-open-type h3,
+.bs-open-type h4,
+.bs-open-type h5,
+.bs-open-type h6 {
+    margin: 0
+}
+.bs-open-bg-classes p {
+    padding: 15px
+}
+.bs-open>.img-circle,
+.bs-open>.img-rounded,
+.bs-open>.img-thumbnail {
+    margin: 5px
+}
+.bs-open>.table-responsive>.table {
+    background-color: #fff
+}
+.bs-open>.btn,
+.bs-open>.btn-group {
+    margin-top: 5px;
+    margin-bottom: 5px
+}
+.bs-open>.btn-toolbar+.btn-toolbar {
+    margin-top: 10px
+}
+.bs-open-control-sizing input[type=text]+input[type=text],
+.bs-open-control-sizing select {
+    margin-top: 10px
+}
+.bs-open-form .input-group {
+    margin-bottom: 10px
+}
+.bs-open>textarea.form-control {
+    resize: vertical
+}
+.bs-open>.list-group {
+    max-width: 400px
+}
+.bs-open .navbar:last-child {
+    margin-bottom: 0
+}
+.bs-open .pagination {
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+.bs-open>.pager {
+    margin-top: 0
+}
+.bs-open-modal {
+    background-color: #f5f5f5
+}
+.bs-open-modal .modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: 1;
+    display: block
+}
+.bs-open-modal .modal-dialog {
+    left: auto;
+    margin-right: auto;
+    margin-left: auto
+}
+.bs-open>.dropdown>.dropdown-toggle {
+    float: left
+}
+.bs-open>.dropdown>.dropdown-menu {
+    position: static;
+    display: block;
+    margin-bottom: 5px;
+    clear: left
+}
+.bs-open-tabs .nav-tabs {
+    margin-bottom: 15px
+}
+.bs-open-tooltips {
+    text-align: center
+}
+.bs-open-tooltips>.btn {
+    margin-top: 5px;
+    margin-bottom: 5px
+}
+.bs-open-tooltip .tooltip {
+    position: relative;
+    display: inline-block;
+    margin: 10px 20px;
+    opacity: 1
+}
+.bs-open-popover {
+    padding-bottom: 24px;
+    background-color: #f9f9f9
+}
+.bs-open-popover .popover {
+    position: relative;
+    display: block;
+    float: left;
+    width: 260px;
+    margin: 20px
+}
+.bs-open>.nav-pills-stacked-example {
+    max-width: 300px
+}
+@media (min-width: 768px) {
+    .zero-clipboard {
+        display: block
+    }
+    .bs-open+.zero-clipboard .btn-clipboard {
+        top: -16px;
+        border-top-right-radius: 0
+    }
+}

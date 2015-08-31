@@ -1,0 +1,202 @@
+.bs-openticket {
+    position: relative;
+    padding: 45px 15px 15px;
+    margin: 0 -15px 15px;
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0;
+    -webkit-box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05)
+}
+.bs-openticket:after {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #959595;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    content: "Open New Ticket"
+}
+.bs-openticket-padded-bottom {
+    padding-bottom: 24px
+}
+.bs-openticket+.highlight,
+.bs-openticket+.zero-clipboard+.highlight {
+    margin: -15px -15px 15px;
+    border-width: 0 0 1px;
+    border-radius: 0
+}
+@media (min-width: 768px) {
+    .bs-openticket {
+        margin-right: 0;
+        margin-left: 0;
+        background-color: #fff;
+        border-color: #ddd;
+        border-width: 1px;
+        border-radius: 4px 4px 0 0;
+        -webkit-box-shadow: none;
+        box-shadow: none
+    }
+    .bs-openticket+.highlight,
+    .bs-openticket+.zero-clipboard+.highlight {
+        margin-top: -16px;
+        margin-right: 0;
+        margin-left: 0;
+        border-width: 1px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px
+    }
+    .bs-openticket-standalone {
+        border-radius: 4px
+    }
+}
+.bs-openticket .container {
+    width: auto
+}
+.bs-openticket>.alert:last-child,
+.bs-openticket>.form-control:last-child,
+.bs-openticket>.jumbotron:last-child,
+.bs-openticket>.list-group:last-child,
+.bs-openticket>.navbar:last-child,
+.bs-openticket>.panel:last-child,
+.bs-openticket>.progress:last-child,
+.bs-openticket>.table-responsive:last-child>.table,
+.bs-openticket>.table:last-child,
+.bs-openticket>.well:last-child,
+.bs-openticket>blockquote:last-child,
+.bs-openticket>ol:last-child,
+.bs-openticket>p:last-child,
+.bs-openticket>ul:last-child {
+    margin-bottom: 0
+}
+.bs-openticket>p>.close {
+    float: none
+}
+.bs-openticket-type .table .type-info {
+    color: #767676;
+    vertical-align: middle
+}
+.bs-openticket-type .table td {
+    padding: 15px 0;
+    border-color: #eee
+}
+.bs-openticket-type .table tr:first-child td {
+    border-top: 0
+}
+.bs-openticket-type h1,
+.bs-openticket-type h2,
+.bs-openticket-type h3,
+.bs-openticket-type h4,
+.bs-openticket-type h5,
+.bs-openticket-type h6 {
+    margin: 0
+}
+.bs-openticket-bg-classes p {
+    padding: 15px
+}
+.bs-openticket>.img-circle,
+.bs-openticket>.img-rounded,
+.bs-openticket>.img-thumbnail {
+    margin: 5px
+}
+.bs-openticket>.table-responsive>.table {
+    background-color: #fff
+}
+.bs-openticket>.btn,
+.bs-openticket>.btn-group {
+    margin-top: 5px;
+    margin-bottom: 5px
+}
+.bs-openticket>.btn-toolbar+.btn-toolbar {
+    margin-top: 10px
+}
+.bs-openticket-control-sizing input[type=text]+input[type=text],
+.bs-openticket-control-sizing select {
+    margin-top: 10px
+}
+.bs-openticket-form .input-group {
+    margin-bottom: 10px
+}
+.bs-openticket>textarea.form-control {
+    resize: vertical
+}
+.bs-openticket>.list-group {
+    max-width: 400px
+}
+.bs-openticket .navbar:last-child {
+    margin-bottom: 0
+}
+.bs-openticket .pagination {
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+.bs-openticket>.pager {
+    margin-top: 0
+}
+.bs-openticket-modal {
+    background-color: #f5f5f5
+}
+.bs-openticket-modal .modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: 1;
+    display: block
+}
+.bs-openticket-modal .modal-dialog {
+    left: auto;
+    margin-right: auto;
+    margin-left: auto
+}
+.bs-openticket>.dropdown>.dropdown-toggle {
+    float: left
+}
+.bs-openticket>.dropdown>.dropdown-menu {
+    position: static;
+    display: block;
+    margin-bottom: 5px;
+    clear: left
+}
+.bs-openticket-tabs .nav-tabs {
+    margin-bottom: 15px
+}
+.bs-openticket-tooltips {
+    text-align: center
+}
+.bs-openticket-tooltips>.btn {
+    margin-top: 5px;
+    margin-bottom: 5px
+}
+.bs-openticket-tooltip .tooltip {
+    position: relative;
+    display: inline-block;
+    margin: 10px 20px;
+    opacity: 1
+}
+.bs-openticket-popover {
+    padding-bottom: 24px;
+    background-color: #f9f9f9
+}
+.bs-openticket-popover .popover {
+    position: relative;
+    display: block;
+    float: left;
+    width: 260px;
+    margin: 20px
+}
+.bs-openticket>.nav-pills-stacked-example {
+    max-width: 300px
+}
+@media (min-width: 768px) {
+    .zero-clipboard {
+        display: block
+    }
+    .bs-openticket+.zero-clipboard .btn-clipboard {
+        top: -16px;
+        border-top-right-radius: 0
+    }
+}

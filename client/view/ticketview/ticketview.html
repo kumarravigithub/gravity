@@ -1,0 +1,66 @@
+<template name="ticketview">
+    <div class="container">
+        {{#with myTicket}}
+        <div class="row">
+            <div class="bs-open" data-example-id="contextual-panels">
+                <div class="panel panel-info">
+                    <div class="panel-body">
+                        <div class="col-md-9">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h4 class="media-heading">{{subject}}</h4>
+                                    <p>{{detail}}</p>
+                                    <footer>
+                                        <small><strong>#{{number}}</strong> Created 5 mins ago <span class="label label-default">Shivani</span>  <span class="label label-info">  MCOP</span></small>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="pull-right">
+                                {{#if isOpen status}}
+                                <a ticketid="{{_id}}" class="btn btn-default" id="close" href="#">Close</a>
+                                {{else}}                               
+                                <a ticketid="{{_id}}" class="btn btn-default" id="openagain" href="#">Open Again</a>
+                                {{/if}}
+                                <p>
+                                <h1></h1>
+                                <span class="star-rating">
+                                    <input {{myRating 1}} ticketid="{{_id}}" class="star" type="radio" name="rating" value="1"><i></i>
+                                    <input {{myRating 2}} ticketid="{{_id}}" class="star" type="radio" name="rating" value="2"><i></i>
+                                    <input {{myRating 3}} ticketid="{{_id}}" class="star" type="radio" name="rating" value="3"><i></i>
+                                    <input {{myRating 4}} ticketid="{{_id}}" class="star" type="radio" name="rating" value="4"><i></i>
+                                    <input {{myRating 5}} ticketid="{{_id}}" class="star" type="radio" name="rating" value="5"><i></i>
+                                </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bs-example" data-example-id="contextual-panels">
+                {{#each myTicketDetails}}
+                <div class="panel panel-info">
+                    <div class="panel-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p><h4 class="media-heading text-info">Reply from {{replyFrom usertype}}</h4></p>
+                                <!-- we can use white-space: pre-wrap style which will be same as <pre> without changing the font / color of the comment-->
+                                <p><pre>{{comment}}</pre></p>
+                                <footer><small>about {{moFromNow timestamp withoutSuffix}} <span class="{{nameSpanClass usertype}}">{{userName usertype userid}}</span></small></footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p><textarea id="comment" class="form-control" rows="3"></textarea></p>
+                        <a ticketid="{{_id}}" class="btn btn-default" id="post" href="#">Post</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </div>
+</template>

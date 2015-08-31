@@ -1,0 +1,405 @@
+.bs-newclient {
+    position: relative;
+    padding: 45px 15px 15px;
+    margin: 0 -15px 15px;
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0;
+    -webkit-box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05)
+}
+.bs-newclient:after {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #959595;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    content: "New Client"
+}
+.bs-newclient-padded-bottom {
+    padding-bottom: 24px
+}
+.bs-newclient+.highlight,
+.bs-newclient+.zero-clipboard+.highlight {
+    margin: -15px -15px 15px;
+    border-width: 0 0 1px;
+    border-radius: 0
+}
+@media (min-width: 768px) {
+    .bs-newclient {
+        margin-right: 0;
+        margin-left: 0;
+        background-color: #fff;
+        border-color: #ddd;
+        border-width: 1px;
+        border-radius: 4px 4px 0 0;
+        -webkit-box-shadow: none;
+        box-shadow: none
+    }
+    .bs-newclient+.highlight,
+    .bs-newclient+.zero-clipboard+.highlight {
+        margin-top: -16px;
+        margin-right: 0;
+        margin-left: 0;
+        border-width: 1px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px
+    }
+    .bs-newclient-standalone {
+        border-radius: 4px
+    }
+}
+.bs-newclient .container {
+    width: auto
+}
+.bs-newclient>.alert:last-child,
+.bs-newclient>.form-control:last-child,
+.bs-newclient>.jumbotron:last-child,
+.bs-newclient>.list-group:last-child,
+.bs-newclient>.navbar:last-child,
+.bs-newclient>.panel:last-child,
+.bs-newclient>.progress:last-child,
+.bs-newclient>.table-responsive:last-child>.table,
+.bs-newclient>.table:last-child,
+.bs-newclient>.well:last-child,
+.bs-newclient>blockquote:last-child,
+.bs-newclient>ol:last-child,
+.bs-newclient>p:last-child,
+.bs-newclient>ul:last-child {
+    margin-bottom: 0
+}
+.bs-newclient>p>.close {
+    float: none
+}
+.bs-newclient-type .table .type-info {
+    color: #767676;
+    vertical-align: middle
+}
+.bs-newclient-type .table td {
+    padding: 15px 0;
+    border-color: #eee
+}
+.bs-newclient-type .table tr:first-child td {
+    border-top: 0
+}
+.bs-newclient-type h1,
+.bs-newclient-type h2,
+.bs-newclient-type h3,
+.bs-newclient-type h4,
+.bs-newclient-type h5,
+.bs-newclient-type h6 {
+    margin: 0
+}
+.bs-newclient-bg-classes p {
+    padding: 15px
+}
+.bs-newclient>.img-circle,
+.bs-newclient>.img-rounded,
+.bs-newclient>.img-thumbnail {
+    margin: 5px
+}
+.bs-newclient>.table-responsive>.table {
+    background-color: #fff
+}
+.bs-newclient>.btn,
+.bs-newclient>.btn-group {
+    margin-top: 5px;
+    margin-bottom: 5px
+}
+.bs-newclient>.btn-toolbar+.btn-toolbar {
+    margin-top: 10px
+}
+.bs-newclient-control-sizing input[type=text]+input[type=text],
+.bs-newclient-control-sizing select {
+    margin-top: 10px
+}
+.bs-newclient-form .input-group {
+    margin-bottom: 10px
+}
+.bs-newclient>textarea.form-control {
+    resize: vertical
+}
+.bs-newclient>.list-group {
+    max-width: 400px
+}
+.bs-newclient .navbar:last-child {
+    margin-bottom: 0
+}
+.bs-newclient .pagination {
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+.bs-newclient>.pager {
+    margin-top: 0
+}
+.bs-newclient-modal {
+    background-color: #f5f5f5
+}
+.bs-newclient-modal .modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: 1;
+    display: block
+}
+.bs-newclient-modal .modal-dialog {
+    left: auto;
+    margin-right: auto;
+    margin-left: auto
+}
+.bs-newclient>.dropdown>.dropdown-toggle {
+    float: left
+}
+.bs-newclient>.dropdown>.dropdown-menu {
+    position: static;
+    display: block;
+    margin-bottom: 5px;
+    clear: left
+}
+.bs-newclient-tabs .nav-tabs {
+    margin-bottom: 15px
+}
+.bs-newclient-tooltips {
+    text-align: center
+}
+.bs-newclient-tooltips>.btn {
+    margin-top: 5px;
+    margin-bottom: 5px
+}
+.bs-newclient-tooltip .tooltip {
+    position: relative;
+    display: inline-block;
+    margin: 10px 20px;
+    opacity: 1
+}
+.bs-newclient-popover {
+    padding-bottom: 24px;
+    background-color: #f9f9f9
+}
+.bs-newclient-popover .popover {
+    position: relative;
+    display: block;
+    float: left;
+    width: 260px;
+    margin: 20px
+}
+.bs-newclient>.nav-pills-stacked-example {
+    max-width: 300px
+}
+@media (min-width: 768px) {
+    .zero-clipboard {
+        display: block
+    }
+    .bs-newclient+.zero-clipboard .btn-clipboard {
+        top: -16px;
+        border-top-right-radius: 0
+    }
+}
+
+.bs-clientlist {
+    position: relative;
+    padding: 45px 15px 15px;
+    margin: 0 -15px 15px;
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0;
+    -webkit-box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05)
+}
+.bs-clientlist:after {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #959595;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    content: "Client List"
+}
+.bs-clientlist-padded-bottom {
+    padding-bottom: 24px
+}
+.bs-clientlist+.highlight,
+.bs-clientlist+.zero-clipboard+.highlight {
+    margin: -15px -15px 15px;
+    border-width: 0 0 1px;
+    border-radius: 0
+}
+@media (min-width: 768px) {
+    .bs-clientlist {
+        margin-right: 0;
+        margin-left: 0;
+        background-color: #fff;
+        border-color: #ddd;
+        border-width: 1px;
+        border-radius: 4px 4px 0 0;
+        -webkit-box-shadow: none;
+        box-shadow: none
+    }
+    .bs-clientlist+.highlight,
+    .bs-clientlist+.zero-clipboard+.highlight {
+        margin-top: -16px;
+        margin-right: 0;
+        margin-left: 0;
+        border-width: 1px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px
+    }
+    .bs-clientlist-standalone {
+        border-radius: 4px
+    }
+}
+.bs-clientlist .container {
+    width: auto
+}
+.bs-clientlist>.alert:last-child,
+.bs-clientlist>.form-control:last-child,
+.bs-clientlist>.jumbotron:last-child,
+.bs-clientlist>.list-group:last-child,
+.bs-clientlist>.navbar:last-child,
+.bs-clientlist>.panel:last-child,
+.bs-clientlist>.progress:last-child,
+.bs-clientlist>.table-responsive:last-child>.table,
+.bs-clientlist>.table:last-child,
+.bs-clientlist>.well:last-child,
+.bs-clientlist>blockquote:last-child,
+.bs-clientlist>ol:last-child,
+.bs-clientlist>p:last-child,
+.bs-clientlist>ul:last-child {
+    margin-bottom: 0
+}
+.bs-clientlist>p>.close {
+    float: none
+}
+.bs-clientlist-type .table .type-info {
+    color: #767676;
+    vertical-align: middle
+}
+.bs-clientlist-type .table td {
+    padding: 15px 0;
+    border-color: #eee
+}
+.bs-clientlist-type .table tr:first-child td {
+    border-top: 0
+}
+.bs-clientlist-type h1,
+.bs-clientlist-type h2,
+.bs-clientlist-type h3,
+.bs-clientlist-type h4,
+.bs-clientlist-type h5,
+.bs-clientlist-type h6 {
+    margin: 0
+}
+.bs-clientlist-bg-classes p {
+    padding: 15px
+}
+.bs-clientlist>.img-circle,
+.bs-clientlist>.img-rounded,
+.bs-clientlist>.img-thumbnail {
+    margin: 5px
+}
+.bs-clientlist>.table-responsive>.table {
+    background-color: #fff
+}
+.bs-clientlist>.btn,
+.bs-clientlist>.btn-group {
+    margin-top: 5px;
+    margin-bottom: 5px
+}
+.bs-clientlist>.btn-toolbar+.btn-toolbar {
+    margin-top: 10px
+}
+.bs-clientlist-control-sizing input[type=text]+input[type=text],
+.bs-clientlist-control-sizing select {
+    margin-top: 10px
+}
+.bs-clientlist-form .input-group {
+    margin-bottom: 10px
+}
+.bs-clientlist>textarea.form-control {
+    resize: vertical
+}
+.bs-clientlist>.list-group {
+    max-width: 400px
+}
+.bs-clientlist .navbar:last-child {
+    margin-bottom: 0
+}
+.bs-clientlist .pagination {
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+.bs-clientlist>.pager {
+    margin-top: 0
+}
+.bs-clientlist-modal {
+    background-color: #f5f5f5
+}
+.bs-clientlist-modal .modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: 1;
+    display: block
+}
+.bs-clientlist-modal .modal-dialog {
+    left: auto;
+    margin-right: auto;
+    margin-left: auto
+}
+.bs-clientlist>.dropdown>.dropdown-toggle {
+    float: left
+}
+.bs-clientlist>.dropdown>.dropdown-menu {
+    position: static;
+    display: block;
+    margin-bottom: 5px;
+    clear: left
+}
+.bs-clientlist-tabs .nav-tabs {
+    margin-bottom: 15px
+}
+.bs-clientlist-tooltips {
+    text-align: center
+}
+.bs-clientlist-tooltips>.btn {
+    margin-top: 5px;
+    margin-bottom: 5px
+}
+.bs-clientlist-tooltip .tooltip {
+    position: relative;
+    display: inline-block;
+    margin: 10px 20px;
+    opacity: 1
+}
+.bs-clientlist-popover {
+    padding-bottom: 24px;
+    background-color: #f9f9f9
+}
+.bs-clientlist-popover .popover {
+    position: relative;
+    display: block;
+    float: left;
+    width: 260px;
+    margin: 20px
+}
+.bs-clientlist>.nav-pills-stacked-example {
+    max-width: 300px
+}
+@media (min-width: 768px) {
+    .zero-clipboard {
+        display: block
+    }
+    .bs-clientlist+.zero-clipboard .btn-clipboard {
+        top: -16px;
+        border-top-right-radius: 0
+    }
+}

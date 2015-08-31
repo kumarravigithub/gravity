@@ -1,0 +1,241 @@
+.bs-closed {
+    position: relative;
+    padding: 45px 15px 15px;
+    margin: 0 -15px 15px;
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0;
+    -webkit-box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05)
+}
+.bs-closed:after {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #959595;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    content: "Closed Tickets"
+}
+.bs-closed-padded-bottom {
+    padding-bottom: 24px
+}
+.bs-closed+.highlight,
+.bs-closed+.zero-clipboard+.highlight {
+    margin: -15px -15px 15px;
+    border-width: 0 0 1px;
+    border-radius: 0
+}
+@media (min-width: 768px) {
+    .bs-closed {
+        margin-right: 0;
+        margin-left: 0;
+        background-color: #fff;
+        border-color: #ddd;
+        border-width: 1px;
+        border-radius: 4px 4px 0 0;
+        -webkit-box-shadow: none;
+        box-shadow: none
+    }
+    .bs-closed+.highlight,
+    .bs-closed+.zero-clipboard+.highlight {
+        margin-top: -16px;
+        margin-right: 0;
+        margin-left: 0;
+        border-width: 1px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px
+    }
+    .bs-closed-standalone {
+        border-radius: 4px
+    }
+}
+.bs-closed .container {
+    width: auto
+}
+.bs-closed>.alert:last-child,
+.bs-closed>.form-control:last-child,
+.bs-closed>.jumbotron:last-child,
+.bs-closed>.list-group:last-child,
+.bs-closed>.navbar:last-child,
+.bs-closed>.panel:last-child,
+.bs-closed>.progress:last-child,
+.bs-closed>.table-responsive:last-child>.table,
+.bs-closed>.table:last-child,
+.bs-closed>.well:last-child,
+.bs-closed>blockquote:last-child,
+.bs-closed>ol:last-child,
+.bs-closed>p:last-child,
+.bs-closed>ul:last-child {
+    margin-bottom: 0
+}
+.bs-closed>p>.close {
+    float: none
+}
+.bs-closed-type .table .type-info {
+    color: #767676;
+    vertical-align: middle
+}
+.bs-closed-type .table td {
+    padding: 15px 0;
+    border-color: #eee
+}
+.bs-closed-type .table tr:first-child td {
+    border-top: 0
+}
+.bs-closed-type h1,
+.bs-closed-type h2,
+.bs-closed-type h3,
+.bs-closed-type h4,
+.bs-closed-type h5,
+.bs-closed-type h6 {
+    margin: 0
+}
+.bs-closed-bg-classes p {
+    padding: 15px
+}
+.bs-closed>.img-circle,
+.bs-closed>.img-rounded,
+.bs-closed>.img-thumbnail {
+    margin: 5px
+}
+.bs-closed>.table-responsive>.table {
+    background-color: #fff
+}
+.bs-closed>.btn,
+.bs-closed>.btn-group {
+    margin-top: 5px;
+    margin-bottom: 5px
+}
+.bs-closed>.btn-toolbar+.btn-toolbar {
+    margin-top: 10px
+}
+.bs-closed-control-sizing input[type=text]+input[type=text],
+.bs-closed-control-sizing select {
+    margin-top: 10px
+}
+.bs-closed-form .input-group {
+    margin-bottom: 10px
+}
+.bs-closed>textarea.form-control {
+    resize: vertical
+}
+.bs-closed>.list-group {
+    max-width: 400px
+}
+.bs-closed .navbar:last-child {
+    margin-bottom: 0
+}
+.bs-closed .pagination {
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+.bs-closed>.pager {
+    margin-top: 0
+}
+.bs-closed-modal {
+    background-color: #f5f5f5
+}
+.bs-closed-modal .modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: 1;
+    display: block
+}
+.bs-closed-modal .modal-dialog {
+    left: auto;
+    margin-right: auto;
+    margin-left: auto
+}
+.bs-closed>.dropdown>.dropdown-toggle {
+    float: left
+}
+.bs-closed>.dropdown>.dropdown-menu {
+    position: static;
+    display: block;
+    margin-bottom: 5px;
+    clear: left
+}
+.bs-closed-tabs .nav-tabs {
+    margin-bottom: 15px
+}
+.bs-closed-tooltips {
+    text-align: center
+}
+.bs-closed-tooltips>.btn {
+    margin-top: 5px;
+    margin-bottom: 5px
+}
+.bs-closed-tooltip .tooltip {
+    position: relative;
+    display: inline-block;
+    margin: 10px 20px;
+    opacity: 1
+}
+.bs-closed-popover {
+    padding-bottom: 24px;
+    background-color: #f9f9f9
+}
+.bs-closed-popover .popover {
+    position: relative;
+    display: block;
+    float: left;
+    width: 260px;
+    margin: 20px
+}
+.bs-closed>.nav-pills-stacked-example {
+    max-width: 300px
+}
+@media (min-width: 768px) {
+    .zero-clipboard {
+        display: block
+    }
+    .bs-closed+.zero-clipboard .btn-clipboard {
+        top: -16px;
+        border-top-right-radius: 0
+    }
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}

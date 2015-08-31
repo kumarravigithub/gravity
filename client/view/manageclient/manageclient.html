@@ -1,0 +1,56 @@
+<template name="manageclient">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="bs-newclient" data-example-id="contextual-panels">
+                    <div class="panel panel-info">
+                        <div class="panel-body">
+                            <form id="newclient">
+                                <div class="form-group">
+                                    <label for="name">Client Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Client Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email address</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="text" class="form-control" id="password" placeholder="Password">
+                                </div>
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="bs-clientlist" data-example-id="contextual-panels">
+                    <div class="panel panel-success">
+                        <div class="panel-body">
+                            {{#if isEdit}}
+                            <form id="editclient">
+                                <div class="form-group">
+                                    <label for="name">Client Name</label>
+                                    <input value="{{editingClientRow.name}}" type="text" class="form-control" id="name" placeholder="Client Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email address</label>
+                                    <input value="{{editingClientRow.email}}" type="email" class="form-control" id="email" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input value="{{editingClientRow.password}}" type="text" class="form-control" id="password" placeholder="Password">
+                                </div>
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </form>
+                            {{else}}
+                            {{> reactiveTable settings=settings}}    
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,72 @@
+<template name="login">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Customer Support Panel</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>cyBuzz Support Portal</h1>
+            <p>Please login with your registered email id and get connected. We are committed to provide you with all the help required for your subscription. We also request you to please go through the product wiki page before you raise a support ticket</p>
+            <form id="login">
+                {{#if isLoginError}}
+                <div class="alert alert-danger" role="alert">{{loginErrorMessage}}</div>
+                {{/if}}
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon" id="sizing-addon1">@</span>
+                            <input id="supportemail" type="text" required class="form-control" placeholder="registered email id" aria-describedby="sizing-addon1">
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon" id="sizing-addon1">#</span>
+                            <input id="password" type="password" required class="form-control" placeholder="password" aria-describedby="sizing-addon1">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="input-group input-group-lg">
+                            <button type="submit" class="btn btn-block btn-primary btn-lg">Go</button>    
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Energy</h2>
+                <p>Energy companies find themselves in a complicated and evolving landscape, with challenges such as skill and talent shortages, cost pressures and the need to invest in new technologies. Spanning the entire energy value chain, cyBuzz Energy industry group provides focused resources, offerings and assets for each segment of the industry to help navigate the changing landscape. Get in touch to call in a demo.</p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Enterprise Solutions</h2>
+                <p>cyBuzz's Enterprise Solutions help you transform your business, harmonizing your IT platforms, accelerating workflows, improving operational efficiency, increasing customer engagement and adopting innovative technologies.</p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Enterprise Mobility</h2>
+                <p>In today’s era whole world is on the move. Everyone is seeking for a solution that optimize efficiency of work outside the office as well. And here comes the role of data on cloud using smart device like smartphones, tablets, ipad etc.</p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <footer>
+        <p>&copy; cyBuzz SC, 2015</p>
+    </footer>
+</template>
