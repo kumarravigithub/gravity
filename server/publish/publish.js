@@ -43,6 +43,16 @@ Meteor.publish('ticketActivities', function (sessionid, id) {
     return TicketActivities.find({ticketid: id});
 });
 
+Meteor.publish('ticket-activities-for-current-staff', function (sessionid) {
+    var clientid = sessionGet(sessionid, 'id');
+    var tickets = Tickets.find({clientid: clientid}).fetch();
+    var ticketids = [];
+    tickets.forEach(function (value) {
+        ticketids.push(value._id);
+    });
+    return TicketActivities.find({ticketid: {$in: ticketids}});
+});
+
 Meteor.publish('ticketRatings', function (sessionid, id) {
     return TicketRatings.find({ticketid: id});
 });

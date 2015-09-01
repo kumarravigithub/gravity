@@ -41,5 +41,9 @@ Template.dashboard.helpers({
     getService: function (serviceid) {
         var s = Services.findOne(serviceid);
         return s.name;
+    },
+    getStaffName: function (ticketid) {
+        var a = TicketActivities.findOne({ticketid: ticketid, event: 'SA'}, {sort: {timestamp: -1}});
+        return a.assignto;
     }
 });
