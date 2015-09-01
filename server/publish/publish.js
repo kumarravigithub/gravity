@@ -3,6 +3,10 @@ Meteor.publish('ticketsforclients', function (sessionid) {
     return Tickets.find({clientid: clientid});
 });
 
+Meteor.publish('tickets-complete-list', function (sessionid) {
+    return Tickets.find({});
+});
+
 Meteor.publish('serviceList', function (sessionid) {
     var clientid = sessionGet(sessionid, 'id');
     var logintype = sessionGet(sessionid, 'logintype');
