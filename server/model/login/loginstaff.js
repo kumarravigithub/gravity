@@ -23,6 +23,8 @@ Meteor.methods({
                         name:"Staffs",
                         link:"/staff"
                 }];
+                returnValue['homelink'] = "/adminhome";
+                returnValue['logintype'] = "STAFF";
                 returnValue['name'] = result[0].name;
                 return returnSuccess("All set", returnValue);
                 break;

@@ -23,7 +23,6 @@ Router.route('/cybuzz', function () {
 });
 
 Router.route('/home', function () {
-
     Meteor.subscribe('ticketsforclients', SessionStore.get("myid"));
     Meteor.subscribe('serviceList', SessionStore.get("myid"));
     Meteor.subscribe('staffList', SessionStore.get("myid"));

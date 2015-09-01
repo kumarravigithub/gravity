@@ -24,6 +24,8 @@ Meteor.methods({
                         name: "Change Password",
                         link: "/changepassword"
                     }];
+                returnValue['homelink'] = "/home";
+                returnValue['logintype'] = "CLIENT";
                 returnValue['name'] = result[0].name;
 
                 return returnSuccess("All set", returnValue);
