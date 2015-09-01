@@ -18,7 +18,7 @@ Template.ticketview.events({
         Meteor.call('rateTicket', ticketid, star, SessionStore.get("myid"), function (error, result) {
             SessionStore.set("loading", false);
             console.log(result);
-            alert(result.message);
+           
         });
     },
     'click a#close': function (e, t) {
@@ -26,7 +26,7 @@ Template.ticketview.events({
         SessionStore.set("loading", true);
         Meteor.call('closeTicket', ticketid, SessionStore.get("myid"), function (error, result) {
             SessionStore.set("loading", false);
-           
+
         });
     },
     'click a#openagain': function (e, t) {
@@ -34,14 +34,14 @@ Template.ticketview.events({
         SessionStore.set("loading", true);
         Meteor.call('openAgain', ticketid, SessionStore.get("myid"), function (error, result) {
             SessionStore.set("loading", false);
-           
+
         });
     }
 });
 
 Template.ticketview.helpers({
-    isOpen: function(status) {
-        if(status=="OPEN") {
+    isOpen: function (status) {
+        if (status == "OPEN") {
             return true
         } else {
             return false
@@ -59,7 +59,7 @@ Template.ticketview.helpers({
         return Tickets.findOne({});
     },
     myTicketDetails: function () {
-        return TicketActivities.find({});
+        return TicketActivities.find({isInternal:false});
     },
     replyFrom: function (usertype, role) {
         var loggedUser = MySessions.findOne({});
@@ -100,6 +100,20 @@ Template.ticketview.helpers({
             } else {
                 return "Client"
             }
+        }
+    },
+    getService: function (serviceid) {
+        var s = Services.findOne(serviceid);
+        return s.name;
+    },
+    getStaffName: function (ticketid) {
+        var a = TicketActivities.findOne({ticketid: ticketid, event: 'SA'}, {sort: {timestamp: -1}});
+        console.log(a);
+        if (Staffs.findOne(a.assignto)) {
+
+            return Staffs.findOne(a.assignto).name;
+        } else {
+            return "";
         }
     }
 });

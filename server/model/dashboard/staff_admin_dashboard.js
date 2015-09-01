@@ -8,7 +8,7 @@ Meteor.methods({
                 usertype: sessionGet(sessionid, 'logintype'),
                 assignto:staffid,
                 comment: "Asssigned to Staff",
-                isInternal: false,
+                isInternal: true,
                 timestamp: new Date()
             });
         }

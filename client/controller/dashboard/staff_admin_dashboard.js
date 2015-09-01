@@ -35,7 +35,9 @@ Template.staffAdminDashboard.events({
     },
     'change #sel2': function (e, t) {
         var ticketid = $(e.currentTarget).attr("ticketid");
-        var staffid = t.find('#sel2').value;
+        var staffid = $(e.currentTarget).val();
+        console.log(ticketid);
+        console.log(staffid);
         Meteor.call('staffRole', ticketid, staffid, SessionStore.get("myid"), function (error, result) {
             SessionStore.set("loading", false);
             if (error) {

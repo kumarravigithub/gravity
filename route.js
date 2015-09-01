@@ -85,6 +85,8 @@ Router.route('/ticket/:_id', function () {
     Meteor.subscribe('ticketRatings', SessionStore.get("myid"), this.params._id);
     Meteor.subscribe('mysession', SessionStore.get("myid"));
     Meteor.subscribe('staffList', SessionStore.get("myid"));
+    Meteor.subscribe('serviceList', SessionStore.get("myid"));
+    Meteor.subscribe('ticket-activities-for-current-staff', SessionStore.get("myid"));
     this.render('ticketview', {data: {clientid: this.params._id}});
 }, {
     name: 'ticketview'

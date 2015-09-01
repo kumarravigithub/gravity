@@ -40,7 +40,7 @@ Meteor.publish('ticketView', function (sessionid, id) {
 });
 
 Meteor.publish('ticketActivities', function (sessionid, id) {
-    return TicketActivities.find({ticketid: id});
+    return TicketActivities.find({ticketid: id, isInternal: false});
 });
 
 Meteor.publish('ticket-activities-for-current-staff', function (sessionid) {

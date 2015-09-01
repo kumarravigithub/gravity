@@ -33,22 +33,22 @@
                     <div class="panel-heading">Ticket List</div>
                     <div class="panel-body">
                         <div class="list-group">
-                                {{#each allTickets}}
-                                <div class="col-md-8 ">
+                            {{#each allTickets}}
+                            <div class="col-md-8 ">
                                 <span class="text-info">{{subject}}</span>
                                 <footer><small><strong>#{{number}}</strong> Created {{moFromNow timestamp withoutSuffix}} 
                                         <!--                                    <span class="label label-default">Zargam</span>  -->
                                         <span class="label label-info">  {{getService serviceid}}</span></small></footer>
-                                </div>
-                                <div class="col-md-4">
-                                    <select class="form-control" id="sel2" ticketid="{{_id}}">
-                                        <option>--Select Staff--</option>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control" id="sel2" ticketid="{{_id}}">
+                                    <option>--Select Staff--</option>
                                     {{#each allStaffs}}
                                     <option value="{{_id}}">{{name}}</option>
                                     {{/each}}
                                 </select> 
-                                </div>
-                                {{/each}}                                   
+                            </div>
+                            {{/each}}                                   
                         </div>
                     </div>
                 </div>

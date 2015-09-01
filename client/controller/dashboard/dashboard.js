@@ -44,6 +44,12 @@ Template.dashboard.helpers({
     },
     getStaffName: function (ticketid) {
         var a = TicketActivities.findOne({ticketid: ticketid, event: 'SA'}, {sort: {timestamp: -1}});
-        return a.assignto;
+        console.log(a);
+        if(Staffs.findOne(a.assignto)) {
+            
+            return Staffs.findOne(a.assignto).name;
+        }else{
+            return "";
+        }
     }
 });
