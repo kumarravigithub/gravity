@@ -23,7 +23,7 @@ Router.route('/cybuzz', function () {
 });
 
 Router.route('/home', function () {
-    
+
     Meteor.subscribe('ticketsforclients', SessionStore.get("myid"));
     Meteor.subscribe('serviceList', SessionStore.get("myid"));
     this.render('dashboard');
@@ -35,9 +35,12 @@ Router.route('/home', function () {
 Router.route('/adminhome', function () {
     Meteor.subscribe('tickets-complete-list', SessionStore.get("myid"));
     Meteor.subscribe('clientList', SessionStore.get("myid"));
+    Meteor.subscribe('services-complete-list', SessionStore.get("myid"));
+    Meteor.subscribe('ticketsforclients', SessionStore.get("myid"));
+    Meteor.subscribe('staffList', SessionStore.get("myid"));
     this.render('staffAdminDashboard');
 }, {
-    name: 'home'
+    name: 'adminhome'
 });
 
 Router.route('/open', function () {

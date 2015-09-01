@@ -7,6 +7,10 @@ Meteor.publish('tickets-complete-list', function (sessionid) {
     return Tickets.find({});
 });
 
+Meteor.publish('services-complete-list', function (sessionid) {
+    return Services.find({});
+});
+
 Meteor.publish('serviceList', function (sessionid) {
     var clientid = sessionGet(sessionid, 'id');
     var logintype = sessionGet(sessionid, 'logintype');

@@ -19,6 +19,11 @@ Schemas.TicketActivity = new SimpleSchema({
         type: String,
         label: "Comment",
     },
+    assignto: {
+        type: String,
+        label: "Assign to Staff(id)",
+        optional:true
+    },
     isInternal: {
         type: Boolean,
         label: "Internal Comments won't be shown",
