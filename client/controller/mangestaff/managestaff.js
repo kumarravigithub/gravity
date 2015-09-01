@@ -49,16 +49,18 @@ Template.managestaff.events({
         e.preventDefault();
         // retrieve the input field values
         var name = t.find('#name').value
+        var role = t.find('#sel1').value;
         var email = t.find('#email').value;
         var password = t.find('#password').value;
         SessionStore.set("loading", false);
-        Meteor.call('newStaff', name, email, password, SessionStore.get("myid"), function (error, result) {
+        Meteor.call('newStaff', name, role, email, password, SessionStore.get("myid"), function (error, result) {
             SessionStore.set("loading", false);
             if (error) {
                 SessionStore.set("loginerror", {status: true, message: "Some serious error. Please contact admin"});
             }
             else {
                 console.log(result);
+                alert(result.message);
                 if (result.status) {
                     // get ticket ID and go to the ticket page.
 

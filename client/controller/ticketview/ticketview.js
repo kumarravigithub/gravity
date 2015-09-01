@@ -7,6 +7,7 @@ Template.ticketview.events({
         Meteor.call('createActivity', ticketid, comment, SessionStore.get("myid"), function (error, result) {
             SessionStore.set("loading", false);
             t.find('#comment').value = "";
+            alert(result.message);
         });
     },
     'click input.star': function (e, t) {
@@ -16,6 +17,8 @@ Template.ticketview.events({
         //SessionStore.set("loading", true);
         Meteor.call('rateTicket', ticketid, star, SessionStore.get("myid"), function (error, result) {
             SessionStore.set("loading", false);
+            console.log(result);
+            alert(result.message);
         });
     },
     'click a#close': function (e, t) {
@@ -23,6 +26,7 @@ Template.ticketview.events({
         SessionStore.set("loading", true);
         Meteor.call('closeTicket', ticketid, SessionStore.get("myid"), function (error, result) {
             SessionStore.set("loading", false);
+           
         });
     },
     'click a#openagain': function (e, t) {
@@ -30,6 +34,7 @@ Template.ticketview.events({
         SessionStore.set("loading", true);
         Meteor.call('openAgain', ticketid, SessionStore.get("myid"), function (error, result) {
             SessionStore.set("loading", false);
+           
         });
     }
 });

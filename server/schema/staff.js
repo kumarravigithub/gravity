@@ -1,7 +1,11 @@
 Schemas.Staff = new SimpleSchema({
     name: {
         type: String,
-        label: "Client's Name",
+        label: "Staff's Name",
+    },
+    role: {
+        type: String,
+        label: "Role",
     },
     email: {
         type: SimpleSchema.RegEx.Email,

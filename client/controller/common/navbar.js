@@ -6,6 +6,14 @@ Template.navbar.helpers({
     isLoading: function () {
         // because the Session variable will most probably be undefined the first time
         return SessionStore.get("loading");
+    },
+    myMenu: function () {
+        // because the Session variable will most probably be undefined the first time
+        return SessionStore.get("menu");
+    },
+    myName: function () {
+        // because the Session variable will most probably be undefined the first time
+        return SessionStore.get("name");
     }
 });
 

@@ -28,8 +28,7 @@ Schemas.Ticket = new SimpleSchema({
     },
     timestamp: {
         type: Date,
-        label: "timestamp",
-        optional: true
+        label: "timestamp"
     }
 });
 

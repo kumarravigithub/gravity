@@ -59,6 +59,7 @@ Template.manageservice.events({
             }
             else {
                 console.log(result);
+                alert(result.message);
                 if (result.status) {
                     // get ticket ID and go to the ticket page.
 

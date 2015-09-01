@@ -24,8 +24,8 @@ Meteor.methods({
             });
         }
         catch (error) {
-            console.log("Could not insert due to " + error);
-            return returnFaliure("Error in saving your ticket. Kindly try again or call cyBuzz Support.");
+            console.log("Could not insert due to XYZ " + error);
+            return returnFaliure("Error in saving your ticket. " + error);
         }
 
         if (inserted) {

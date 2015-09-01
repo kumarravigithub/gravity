@@ -12,7 +12,7 @@ Meteor.methods({
         }
         catch (error) {
             console.log("Could not insert due to " + error);
-            return returnFaliure("Error in saving service. Kindly try again or call cyBuzz Support.");
+            return returnFaliure("Error in saving service. " + error);
         }
 
         if (inserted) {

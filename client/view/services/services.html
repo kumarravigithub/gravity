@@ -1,0 +1,23 @@
+<template name="services">
+    <div class="container">
+        <div class="row">
+            <div class="bs-services" data-example-id="contextual-panels">
+                {{#each myServices}}
+                <div class="panel panel-info">
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <span class="text-info">{{name}}</span>
+                            <footer><small>{{description}}</small></footer>
+                        </div>
+<!--                        <div class="col-md-3">
+                            <div class="pull-right">
+                                <a class="btn btn-default" id="view" href="/ticket/{{_id}}" role="button">View</a>  <a ticketid="{{_id}}" class="btn btn-default" id="close" href="#">Close</a>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+                {{/each}}
+            </div>         
+        </div>
+    </div>
+</template>

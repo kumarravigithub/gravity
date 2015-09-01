@@ -38,6 +38,7 @@ Template.manageclient.events({
                 SessionStore.set("loading", true);
                 Meteor.call('deleteClient', clientid, SessionStore.get("myid"), function (error, result) {
                     SessionStore.set("loading", false);
+                    alert(result.message);
                 });
             }
         });
@@ -59,11 +60,13 @@ Template.manageclient.events({
         SessionStore.set("loading", false);
         Meteor.call('newClient', name, email, password, SessionStore.get("myid"), function (error, result) {
             SessionStore.set("loading", false);
+            
             if (error) {
                 SessionStore.set("loginerror", {status: true, message: "Some serious error. Please contact admin"});
             }
             else {
                 console.log(result);
+                alert(result.message);
                 if (result.status) {
                     // get ticket ID and go to the ticket page.
 

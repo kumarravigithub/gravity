@@ -9,6 +9,12 @@ Router.route('/login', function () {
 }, {
     name: 'login'
 });
+Router.route('/services', function () {
+    Meteor.subscribe('serviceList', SessionStore.get("myid"));
+    this.render('services');
+}, {
+    name: 'services'
+});
 
 Router.route('/cybuzz', function () {
     this.render('loginstaff');
@@ -30,6 +36,12 @@ Router.route('/open', function () {
     this.render('openticket');
 }, {
     name: 'openticket'
+});
+
+Router.route('/changepassword', function () {
+    this.render('changepassword');
+}, {
+    name: 'changepassword'
 });
 
 Router.route('/client', function () {

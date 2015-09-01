@@ -14,7 +14,17 @@ Meteor.methods({
                 var sessionid = sessionSet(sessionid, "name", result[0].name);
                 var sessionid = sessionSet(sessionid, "email", result[0].email);
 
-                return returnSuccess("All set", sessionid);
+                 var returnValue={};
+                returnValue['sessionid']=sessionid;
+                returnValue['menu']=[{
+                        name:"Clients",
+                        link:"/client"
+                },{
+                        name:"Staffs",
+                        link:"/staff"
+                }];
+                returnValue['name'] = result[0].name;
+                return returnSuccess("All set", returnValue);
                 break;
             default:
                 return returnFaliure("There is some error in login module. These developers are completely useless. Let me find out who wrote this code and teach her a lesson.");

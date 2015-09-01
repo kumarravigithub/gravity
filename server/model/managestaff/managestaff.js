@@ -1,10 +1,11 @@
 Meteor.methods({
-    'newStaff': function (name, email, password, sessionid) {
+    'newStaff': function (name, role, email, password, sessionid) {
 // validate here
         try {
             console.log(name, email, password);
             var inserted = Staffs.insert({
                 name: name,
+                role:role,
                 email: email,
                 password: password,
                 timestamp: new Date()
@@ -12,7 +13,7 @@ Meteor.methods({
         }
         catch (error) {
             console.log("Could not insert due to " + error);
-            return returnFaliure("Error in saving staff. Kindly try again or call cyBuzz Support.");
+            return returnFaliure("Error in saving staff. " + error);
         }
 
         if (inserted) {
@@ -23,6 +24,7 @@ Meteor.methods({
     'deleteStaff': function (id, sessionid) {
         console.log(id);
         Staffs.remove({_id: id});
-    }
+    },
+    
 });
 

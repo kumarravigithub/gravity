@@ -1,6 +1,6 @@
 Template.openticket.events({
     'click #openticket': function (e, t) {
-                SessionStore.set("loading", true);
+        SessionStore.set("loading", true);
         e.preventDefault();
         // retrieve the input field values
         var subject = t.find('#subject').value
@@ -13,12 +13,13 @@ Template.openticket.events({
             }
             else {
                 console.log(result);
+                alert(result.message);
                 if (result.status) {
                     // get ticket ID and go to the ticket page.
-                    
+
                     Router.go('home');
                 } else {
-                   
+
                 }
             }
         });

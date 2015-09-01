@@ -1,27 +1,5 @@
 Meteor.methods({
     'createActivity': function (ticketid, comment, sessionid) {
-        Menusyi = new Mongo.Collection("menu");
-
-        Menusyi.insert({
-            usertype: "STAFF",
-            role: '',
-            items: [
-                {
-                    name: "Open a new Ticket",
-                    url: "open"
-                },
-                {
-                    name: "Clients",
-                    url: "client"
-                },
-                {
-                    name: "Staffs",
-                    url: "staff"
-                }
-            ]
-        });
-        var a = Menusyi.find().fetch();
-        console.log(a);
         try {
             console.log(ticketid, comment)
             var inserted = TicketActivities.insert({
@@ -36,7 +14,7 @@ Meteor.methods({
         }
         catch (error) {
             console.log("Could not insert due to " + error);
-            return returnFaliure("Error in saving your comment. Kindly try again or call cyBuzz Support.");
+            return returnFaliure(error + " Comment Error");
         }
         if (inserted) {
             console.log("The inserted record has _id: " + inserted);
@@ -59,11 +37,11 @@ Meteor.methods({
         }
         catch (error) {
             console.log("Could not insert due to " + error);
-            return returnFaliure("Error in saving your comment. Kindly try again or call cyBuzz Support.");
+            return returnFaliure(error);
         }
         if (inserted) {
             console.log("The inserted record has _id: " + inserted);
-            return returnSuccess("Comment saved successfully");
+            return returnSuccess("Star saved successfully");
         }
     }
 });

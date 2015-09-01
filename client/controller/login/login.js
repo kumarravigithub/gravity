@@ -28,7 +28,9 @@ Template.login.events({
             else {
                 if (result.status) {
                     SessionStore.set("loggedin", true);
-                    SessionStore.set("myid", result.data);
+                    SessionStore.set("myid", result.data.sessionid);
+                    SessionStore.set("menu", result.data.menu);
+                    SessionStore.set("name", result.data.name);
                     Router.go('home');
                 } else {
                     SessionStore.set("loginerror", {status: true, message: result.message});

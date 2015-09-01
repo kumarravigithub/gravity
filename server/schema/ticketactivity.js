@@ -1,4 +1,4 @@
-Schemas.Ticket = new SimpleSchema({
+Schemas.TicketActivity = new SimpleSchema({
     ticketid: {
         type: String,
         label: "Ticket ID - related",
@@ -17,7 +17,7 @@ Schemas.Ticket = new SimpleSchema({
     },
     comment: {
         type: String,
-        label: "Client ID",
+        label: "Comment",
     },
     isInternal: {
         type: Boolean,
@@ -29,4 +29,4 @@ Schemas.Ticket = new SimpleSchema({
     }
 });
 
-Tickets.attachSchema(Schemas.Ticket);
+TicketActivities.attachSchema(Schemas.TicketActivity);
