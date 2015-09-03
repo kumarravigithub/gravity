@@ -12,6 +12,10 @@ Schemas.Client = new SimpleSchema({
         label: "Password",
         min: 6
     },
+    mobile: {
+        type: String,
+        label: "Mobile"
+    },
     timestamp: {
         type: Date,
         label: "timestamp"

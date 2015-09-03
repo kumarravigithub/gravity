@@ -35,10 +35,10 @@
                         <div class="list-group">
                             {{#each allTickets}}
                             <div class="col-md-8 ">
-                                <span class="text-info">{{subject}}</span>
+                                <a href="/ticket/{{_id}}"><span class="text-info">{{subject}}</span>
                                 <footer><small><strong>#{{number}}</strong> Created {{moFromNow timestamp withoutSuffix}} 
                                         <!--                                    <span class="label label-default">Zargam</span>  -->
-                                        <span class="label label-info">  {{getService serviceid}}</span></small></footer>
+                                        <span class="label label-info">  {{getService serviceid}}</span></small></footer></a>
                             </div>
                             <div class="col-md-4">
                                 <select class="form-control" id="sel2" ticketid="{{_id}}">

@@ -22,6 +22,13 @@ Router.route('/cybuzz', function () {
     name: 'loginstaff'
 });
 
+Router.route('/smsportal', function () {
+    Meteor.subscribe('staffList', SessionStore.get("myid"));
+    this.render('smsportal');
+}, {
+    name: 'smsportal'
+});
+
 Router.route('/home', function () {
     Meteor.subscribe('ticketsforclients', SessionStore.get("myid"));
     Meteor.subscribe('serviceList', SessionStore.get("myid"));

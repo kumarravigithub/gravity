@@ -22,6 +22,9 @@ Meteor.methods({
                 },{
                         name:"Staffs",
                         link:"/staff"
+                },{
+                        name:"SMS Portal",
+                        link:"/smsportal"
                 }];
                 returnValue['homelink'] = "/adminhome";
                 returnValue['logintype'] = "STAFF";

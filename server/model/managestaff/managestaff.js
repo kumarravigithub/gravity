@@ -1,5 +1,5 @@
 Meteor.methods({
-    'newStaff': function (name, role, email, password, sessionid) {
+    'newStaff': function (name, role, mobile, email, password, sessionid) {
 // validate here
         try {
             console.log(name, email, password);
@@ -7,6 +7,7 @@ Meteor.methods({
                 name: name,
                 role:role,
                 email: email,
+                mobile: mobile,
                 password: password,
                 timestamp: new Date()
             });

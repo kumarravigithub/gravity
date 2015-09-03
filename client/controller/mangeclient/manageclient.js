@@ -57,8 +57,9 @@ Template.manageclient.events({
         var name = t.find('#name').value
         var email = t.find('#email').value;
         var password = t.find('#password').value;
+        var mobile = t.find('#mobile').value;
         SessionStore.set("loading", false);
-        Meteor.call('newClient', name, email, password, SessionStore.get("myid"), function (error, result) {
+        Meteor.call('newClient', name, email, password, mobile, SessionStore.get("myid"), function (error, result) {
             SessionStore.set("loading", false);
             
             if (error) {

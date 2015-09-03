@@ -11,6 +11,10 @@ Schemas.Staff = new SimpleSchema({
         type: SimpleSchema.RegEx.Email,
         label: "Email address",
     },
+    mobile: {
+        type: String,
+        label: "Mobile",
+    },
     password: {
         type: String,
         label: "Password",

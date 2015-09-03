@@ -1,0 +1,48 @@
+<template name="smsportal">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 " >
+                <div class="panel panel-default">
+                    <div class="panel-heading">SMS Portal</div>
+                    <div class="panel-body">
+                        <div class="col-md-6">
+                        <table class="table table-striped" width="100%">
+                            <thead><tr>
+                                    <th>Select Staffs</th>
+                                    <th>Staff Name</th>
+                                    <th>Email Id</th> 
+                                    <th>Mobile No</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each allStaffs}}
+                                <tr>
+                                    <td><input staffname="{{name}}" email="{{email}}" mobile="{{mobile}}" type="checkbox"></td>
+                                    <td>
+                                        {{name}}   
+                                    </td>
+                                    <td>
+                                        {{email}}   
+                                    </td>
+                                    <td>
+                                        {{mobile}}   
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>                                  
+                    </div>
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                    <div class="panel-heading">Message</div>
+                    <div class="panel-body">
+                        <textarea cols="50" id="messages" maxlength="160" placeholder="maximum 160 characters"></textarea>
+                        <button type="submit" staffname="{{name}}" class="btn btn-danger pull-right" id="mybtn">Send</button>
+                    </div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
