@@ -13,9 +13,12 @@
 
                         <ul class="list-group">
                             {{#each allClients}}
+
                             <a href="#" class="list-group-item list-group-item-success" id="clientlist" clientid="{{_id}}">
                                 <li class="list-group-item">
+
                                     {{name}}
+
                                     <div class="pull-right">
                                         <span class="label label-danger">{{#with myOpenTickets _id}}{{this.count}}{{/with}}</span>
                                         <span class="label label-success">{{#with myClosedTickets _id}}{{this.count}}{{/with}}</span>
@@ -31,28 +34,29 @@
             <div class="col-md-8 " >
                 <div class="panel panel-default">
                     <div class="panel-heading">Ticket List</div>
-                    <div class="panel-body">
-                        <div class="list-group">
+                    
                             {{#each allTickets}}
-                            <div class="col-md-8 ">
-                                <a href="/ticket/{{_id}}"><span class="text-info">{{subject}}</span>
-                                <footer><small><strong>#{{number}}</strong> Created {{moFromNow timestamp withoutSuffix}} 
-                                        <!--                                    <span class="label label-default">Zargam</span>  -->
-                                        <span class="label label-info">  {{getService serviceid}}</span></small></footer></a>
+                            <div class="panel panel-info">
+                                <div class="panel-body">
+                                    <div class="col-md-8 ">
+                                        <a href="/ticket/{{_id}}"><span class="text-info">{{subject}}</span>
+                                            <footer><small><strong>#{{number}}</strong> Created {{moFromNow timestamp withoutSuffix}} 
+                                                    <!--                                    <span class="label label-default">Zargam</span>  -->
+                                                    <span class="label label-info">  {{getService serviceid}}</span></small></footer></a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select class="form-control" id="sel2" ticketid="{{_id}}">
+                                            <option>--Select Staff--</option>
+                                            {{#each allStaffs}}
+                                            <option value="{{_id}}">{{name}}</option>
+                                            {{/each}}
+                                        </select> 
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-4">
-                                <select class="form-control" id="sel2" ticketid="{{_id}}">
-                                    <option>--Select Staff--</option>
-                                    {{#each allStaffs}}
-                                    <option value="{{_id}}">{{name}}</option>
-                                    {{/each}}
-                                </select> 
-                            </div>
-                            {{/each}}                                   
+                                    {{/each}} 
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</template>
+            </template>
