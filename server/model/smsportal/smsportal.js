@@ -3,6 +3,7 @@ Meteor.methods({
       
         try {
            var res= sendSMStoFarmer("cybuzzsc","del12345@",mobile,"CYZTKT",msg);
+           console.log(res);
            if(res){
             var inserted = Sms.insert({
                 name: staffname,
@@ -21,7 +22,7 @@ Meteor.methods({
 
         if (inserted) {
             console.log("The inserted record has _id: " + inserted);
-            return returnSuccess("SMS send successfully. SMS id : " + inserted, inserted);
+            return returnSuccess("SMS send successfully.");
         }
         }
 });
@@ -38,5 +39,6 @@ function sendSMStoFarmer(Username, Password, To, From, Text) {
             category: 'bulk'
         }
     });
+    console.log("Message Send" + To + Text);
     return result;
 }
