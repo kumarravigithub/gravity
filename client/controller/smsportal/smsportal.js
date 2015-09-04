@@ -11,8 +11,10 @@ Template.smsportal.events({
     var email=$(this).attr('email');
     var mobile=$(this).attr('mobile');
     var msg = t.find('#messages').value;
+    SessionStore.set("loading", true);
     Meteor.call('smsPortalDetails', email, mobile, staffname, msg, SessionStore.get("myid"), function (error, result) {
-            alert(result.message);
+        SessionStore.set("loading", false);   
+        alert(result.message);
         });
 });    
     }

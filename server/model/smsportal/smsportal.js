@@ -2,7 +2,7 @@ Meteor.methods({
      'smsPortalDetails': function (staffname, mobile, email, msg, sessionid) {
       
         try {
-           var res= sendSMStoFarmer("cybuzzsc","del12345@",mobile,"CYZTKT",msg);
+           var res= sendSMStoFarmer("cybuzzsc","del12345@",mobile,"CYBUZZ",msg);
            console.log(res);
            if(res){
             var inserted = Sms.insert({
