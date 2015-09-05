@@ -10,22 +10,25 @@ Meteor.methods({
             case 1:
                 var sessionid = sessionSet("LOGIN", "id", result[0]._id);
                 var sessionid = sessionSet(sessionid, "logintype", "STAFF");
-                var sessionid = sessionSet(sessionid, "role", "STAFF");
+                var sessionid = sessionSet(sessionid, "role", result[0].role.toUpperCase());
                 var sessionid = sessionSet(sessionid, "name", result[0].name);
                 var sessionid = sessionSet(sessionid, "email", result[0].email);
 
-                 var returnValue={};
-                returnValue['sessionid']=sessionid;
-                returnValue['menu']=[{
-                        name:"Clients",
-                        link:"/client"
-                },{
-                        name:"Staffs",
-                        link:"/staff"
-                },{
-                        name:"SMS Portal",
-                        link:"/smsportal"
-                }];
+                var returnValue = {};
+                returnValue['sessionid'] = sessionid;
+                returnValue['menu'] = [{
+                        name: "Clients",
+                        link: "/client"
+                    }, {
+                        name: "Staffs",
+                        link: "/staff"
+                    }, {
+                        name: "SMS Portal",
+                        link: "/smsportal"
+                    }, {
+                        name: "Open a new Ticket",
+                        link: "/openstaff"
+                    }];
                 returnValue['homelink'] = "/adminhome";
                 returnValue['logintype'] = "STAFF";
                 returnValue['name'] = result[0].name;

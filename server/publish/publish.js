@@ -4,7 +4,42 @@ Meteor.publish('ticketsforclients', function (sessionid) {
 });
 
 Meteor.publish('tickets-complete-list', function (sessionid) {
-    return Tickets.find({});
+    var id = sessionGet(sessionid, 'id');
+    var logintype = sessionGet(sessionid, 'logintype');
+    switch (logintype) {
+        case "CLIENT":
+            return Tickets.find({clientid: id});
+            break;
+        case "STAFF":
+            var role = sessionGet(sessionid, 'role');
+            switch (role) {
+                case "STAFF":
+                    var tickets = Tickets.find().fetch();
+                    var ticketids = [];
+                    tickets.forEach(function (item) {
+                        var ticketact = TicketActivities.findOne({ticketid: item._id, event: "SA"}, {sort: {timestamp: -1}});
+
+                        if (ticketact) {
+                            console.log(ticketact);
+                            if (ticketact.assignto == id) {
+                                ticketids.push(item._id);
+                            }
+                        }
+                    });
+                    return Tickets.find({_id: {$in: ticketids}});
+                    break;
+                case "ADMIN":
+                    console.log("admin");
+                    return Tickets.find();
+                    break;
+                default:
+                    return;
+            }
+            break;
+        default:
+            return;
+    }
+
 });
 
 Meteor.publish('services-complete-list', function (sessionid) {

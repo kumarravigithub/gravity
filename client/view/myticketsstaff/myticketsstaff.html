@@ -1,0 +1,52 @@
+<template name="myticketsstaff">
+    <div class="container">
+        <div class="row">
+            {{#if isOpenTickets myOpenTickets.count}}
+            <div class="bs-open" data-example-id="contextual-panels">
+                {{#each myOpenTickets}}
+                <div class="panel panel-info">
+                    <div class="panel-body">
+                        <div class="col-md-9">
+                            <a href="/ticket/{{_id}}" >
+                            <span class="text-info">{{subject}}</span>
+                            <footer><small><strong>#{{number}}</strong> Created {{moFromNow timestamp withoutSuffix}} 
+                                    <span class="label label-default">{{getStaffName _id}}</span>
+                                    <span class="label label-info">  {{getService serviceid}}</span></small></footer>
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="pull-right">
+                                <a class="btn btn-default" id="view" href="/ticket/{{_id}}" role="button">View</a>  <a ticketid="{{_id}}" class="btn btn-default" id="close" href="#">Close</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{/if}}
+            {{#if isClosedTickets myClosedTickets.count}}
+            <div class="bs-closed" data-example-id="contextual-panels">
+                {{#each myClosedTickets}}
+                <div class="panel panel-success">
+                    <div class="panel-body">
+                        <div class="col-md-9">
+                            <a href="#">
+                            <span class="text-info">{{subject}}</span>
+                            <footer><small><strong>#{{number}}</strong> Created {{moFromNow timestamp withoutSuffix}}
+                                    <span class="label label-default">{{getStaffName _id}}</span>
+                                    <span class="label label-info">  {{getService serviceid}}</span></small></footer>
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="pull-right">
+                                <a class="btn btn-default" ticketid="{{_id}}" id="view" href="#" role="button">View</a>  <a ticketid="{{_id}}" class="btn btn-default" id="openagain" href="#">Open Again</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</template>

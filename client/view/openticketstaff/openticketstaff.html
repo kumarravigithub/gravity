@@ -1,0 +1,55 @@
+<template name="openticketstaff">
+    <div class="container">
+        <div class="row">
+            <div class="bs-openticket" data-example-id="contextual-panels">
+                <div class="panel panel-info">
+                    <div class="panel-body">
+                        <div class="row" style="padding-top: 20px">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="sel1">Select Client</label>
+                                    <select class="form-control" id="client">
+                                        <option value="NA">--select client--</option>
+                                        {{#each myClients}}
+                                        <option value="{{_id}}">{{name}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="sel1">Brief Subject of your issue</label>
+                                    <input id="subject" type="text" class="form-control" placeholder="Subject">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="sel1">Select Service</label>
+                                    <select class="form-control" id="service">
+                                        <option value="NA">--select service--</option>
+                                        {{#each myServices}}
+                                        <option value="{{_id}}">{{name}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 20px">
+                            <div class="col-md-12">
+                                <textarea id="detail" class="form-control" rows="3" placeholder="Please be as detailed as possible about the issue you're experiencing."></textarea>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 15px">
+                            <div class="col-md-12">
+                                <a id="openticketstaff" class="btn btn-warning pull-right">Submit</a>
+                                <a id="btnback" class="btn btn-default">Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

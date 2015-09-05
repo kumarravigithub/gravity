@@ -10,7 +10,6 @@ twbs:bootstrap
 aldeed:collection2
 iron:router
 aldeed:autoform
-matteodem:server-session
 natestrauser:connection-banner
 aslagle:reactive-table
 mizzao:bootboxjs
@@ -21,3 +20,4 @@ smeevil:session-store
 houston:admin
 http
 meteorhacks:kadira
+meteorhacks:kadira-profiler

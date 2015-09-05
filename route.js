@@ -44,7 +44,6 @@ Router.route('/adminhome', function () {
     Meteor.subscribe('tickets-complete-list', SessionStore.get("myid"));
     Meteor.subscribe('clientList', SessionStore.get("myid"));
     Meteor.subscribe('services-complete-list', SessionStore.get("myid"));
-    Meteor.subscribe('ticketsforclients', SessionStore.get("myid"));
     Meteor.subscribe('staffList', SessionStore.get("myid"));
     Meteor.subscribe('ticketActivities', SessionStore.get("myid"));
     Meteor.subscribe('ticket-activities-for-all-staff', SessionStore.get("myid"));
@@ -53,12 +52,33 @@ Router.route('/adminhome', function () {
     name: 'adminhome'
 });
 
+Router.route('/mytickets', function () {
+    Meteor.subscribe('tickets-complete-list', SessionStore.get("myid"));
+    Meteor.subscribe('clientList', SessionStore.get("myid"));
+    Meteor.subscribe('services-complete-list', SessionStore.get("myid"));
+    Meteor.subscribe('staffList', SessionStore.get("myid"));
+    Meteor.subscribe('ticketActivities', SessionStore.get("myid"));
+    Meteor.subscribe('ticket-activities-for-all-staff', SessionStore.get("myid"));
+    this.render('myticketsstaff');
+}, {
+    name: 'mytickets'
+});
+
 Router.route('/open', function () {
     Meteor.subscribe('serviceList', SessionStore.get("myid"));
     this.render('openticket');
 }, {
     name: 'openticket'
 });
+
+Router.route('/openstaff', function () {
+    Meteor.subscribe('clientList', SessionStore.get("myid"));
+    Meteor.subscribe('serviceList', SessionStore.get("myid"));
+    this.render('openticketstaff');
+}, {
+    name: 'openticketstaff'
+});
+
 
 Router.route('/changepassword', function () {
     this.render('changepassword');
@@ -95,7 +115,7 @@ Router.route('/ticket/:_id', function () {
     Meteor.subscribe('staffList', SessionStore.get("myid"));
     Meteor.subscribe('serviceList', SessionStore.get("myid"));
     Meteor.subscribe('ticket-activities-for-current-staff', SessionStore.get("myid"));
-     Meteor.subscribe('ticket-activities-for-all-staff', SessionStore.get("myid"));
+    Meteor.subscribe('ticket-activities-for-all-staff', SessionStore.get("myid"));
     this.render('ticketview', {data: {clientid: this.params._id}});
 }, {
     name: 'ticketview'
