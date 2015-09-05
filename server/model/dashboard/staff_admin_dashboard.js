@@ -14,11 +14,11 @@ Meteor.methods({
         }
         catch (error) {
             console.log("Could not insert due to " + error);
-            return returnFaliure(error + " Comment Error");
+            return returnFaliure(error + " Error");
         }
         if (inserted) {
             console.log("The inserted record has _id: " + inserted);
-            return returnSuccess("Comment saved successfully");
+            return returnSuccess("Staff Assigned Successfully");
         }
     }
 });

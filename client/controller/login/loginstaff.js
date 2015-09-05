@@ -32,6 +32,8 @@ Template.loginstaff.events({
                     SessionStore.set("myid", result.data.sessionid);
                     SessionStore.set("menu", result.data.menu);
                     SessionStore.set("name", result.data.name);
+                    SessionStore.set("role", result.data.role);
+                    SessionStore.set("staffid", result.data.staffid);
                     SessionStore.set("homelink", result.data.homelink);
                     Router.go('adminhome');
                 } else {

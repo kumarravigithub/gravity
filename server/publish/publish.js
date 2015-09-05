@@ -19,7 +19,7 @@ Meteor.publish('serviceList', function (sessionid) {
         return Services.find({clientid: clientid});
     }
     console.log("Returning Services for staff :D");
-    return Services.find({clientid: clientid});
+    return Services.find({});
 });
 
 Meteor.publish('serviceListMaster', function (clientid, sessionid) {
@@ -46,6 +46,16 @@ Meteor.publish('ticketActivities', function (sessionid, id) {
 Meteor.publish('ticket-activities-for-current-staff', function (sessionid) {
     var clientid = sessionGet(sessionid, 'id');
     var tickets = Tickets.find({clientid: clientid}).fetch();
+    var ticketids = [];
+    tickets.forEach(function (value) {
+        ticketids.push(value._id);
+    });
+    return TicketActivities.find({ticketid: {$in: ticketids}});
+});
+
+Meteor.publish('ticket-activities-for-all-staff', function (sessionid) {
+    var clientid = sessionGet(sessionid, 'id');
+    var tickets = Tickets.find({}).fetch();
     var ticketids = [];
     tickets.forEach(function (value) {
         ticketids.push(value._id);

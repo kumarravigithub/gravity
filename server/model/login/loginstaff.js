@@ -29,6 +29,8 @@ Meteor.methods({
                 returnValue['homelink'] = "/adminhome";
                 returnValue['logintype'] = "STAFF";
                 returnValue['name'] = result[0].name;
+                returnValue['role'] = result[0].role;
+                returnValue['staffid'] = result[0]._id;
                 return returnSuccess("All set", returnValue);
                 break;
             default:

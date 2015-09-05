@@ -46,6 +46,8 @@ Router.route('/adminhome', function () {
     Meteor.subscribe('services-complete-list', SessionStore.get("myid"));
     Meteor.subscribe('ticketsforclients', SessionStore.get("myid"));
     Meteor.subscribe('staffList', SessionStore.get("myid"));
+    Meteor.subscribe('ticketActivities', SessionStore.get("myid"));
+    Meteor.subscribe('ticket-activities-for-all-staff', SessionStore.get("myid"));
     this.render('staffAdminDashboard');
 }, {
     name: 'adminhome'
@@ -93,6 +95,7 @@ Router.route('/ticket/:_id', function () {
     Meteor.subscribe('staffList', SessionStore.get("myid"));
     Meteor.subscribe('serviceList', SessionStore.get("myid"));
     Meteor.subscribe('ticket-activities-for-current-staff', SessionStore.get("myid"));
+     Meteor.subscribe('ticket-activities-for-all-staff', SessionStore.get("myid"));
     this.render('ticketview', {data: {clientid: this.params._id}});
 }, {
     name: 'ticketview'

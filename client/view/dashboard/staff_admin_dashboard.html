@@ -1,6 +1,7 @@
 <template name="staffAdminDashboard">
     <div class="container">
         <div class="row">
+            {{#if isAdmin}}
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">Client List</div>
@@ -10,7 +11,7 @@
                                                     <a href="#" class="list-group-item list-group-item-success" id="clientlist" clientid="{{_id}}">{{name}}</a>
                                                     {{/each}}
                                                 </div>-->
-
+                        
                         <ul class="list-group">
                             {{#each allClients}}
 
@@ -33,15 +34,15 @@
             </div>
             <div class="col-md-8 " >
                 <div class="panel panel-default">
-                    <div class="panel-heading">Ticket List</div>
+                    <div class="panel-heading">Ticket List <a href="/home" class="btn-small btn-info pull-right">Login As {{#with allTickets}}{{clientid}}{{/with}}</a></div>
                     
                             {{#each allTickets}}
-                            <div class="panel panel-info">
+                            <div class="panel panel-info" style="margin-top: 10px">
                                 <div class="panel-body">
                                     <div class="col-md-8 ">
                                         <a href="/ticket/{{_id}}"><span class="text-info">{{subject}}</span>
                                             <footer><small><strong>#{{number}}</strong> Created {{moFromNow timestamp withoutSuffix}} 
-                                                    <!--                                    <span class="label label-default">Zargam</span>  -->
+                                                                                        <span class="label label-danger">{{getStaffName _id}}</span>  
                                                     <span class="label label-info">  {{getService serviceid}}</span></small></footer></a>
                                     </div>
                                     <div class="col-md-4">
@@ -57,6 +58,51 @@
                                     {{/each}} 
                         </div>
                     </div>
+            {{else}}
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Client List</div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            {{#each allClients}}
+
+                            <a href="#" class="list-group-item list-group-item-success" id="tktid" clientid="{{_id}}">
+                                <li class="list-group-item">
+
+                                    {{name}}
+
+                                    <div class="pull-right">
+                                        <span class="label label-danger">{{#with myOpenTickets _id}}{{this.count}}{{/with}}</span>
+                                        <span class="label label-success">{{#with myClosedTickets _id}}{{this.count}}{{/with}}</span>
+                                    </div>
+
+                                </li>
+                            </a>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 " >
+                <div class="panel panel-default">
+                    <div class="panel-heading">Ticket List</div>
+                    
+                            {{#each staffTickets}}
+                            <div class="panel panel-info" style="margin-top: 10px">
+                                <div class="panel-body">
+                                    <div class="col-md-12 ">
+                                        <a href="/ticket/{{ticketid}}"><span class="text-info">{{subject}}</span>
+                                            <footer><small><strong>#{{number}}</strong> Created {{moFromNow timestamp withoutSuffix}} 
+                                                                                        <span class="label label-danger">{{getStaffName _id}}</span>  
+                                                    <span class="label label-info">  {{getService serviceid}}</span></small></footer></a>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                                    {{/each}} 
+                        </div>
+                    </div>
+            {{/if}}
                 </div>
             </div>
             </template>

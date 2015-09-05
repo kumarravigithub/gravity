@@ -4,6 +4,16 @@ Template.staffAdminDashboard.helpers({
     },
     allStaffs: function () {
         return Staffs.find({});
+        
+        
+    },
+    isAdmin: function () {
+        var role = SessionStore.get("role");
+        if (role=="Admin") {
+            return true;
+        } else {
+            return false;
+        }
     },
     allTickets: function () {
         var clientid = SessionStore.get("ticket_view_clientid");
@@ -13,9 +23,27 @@ Template.staffAdminDashboard.helpers({
             return Tickets.find({clientid: clientid});
         }
     },
+    staffTickets: function () {
+//        var clientid = SessionStore.get("ticket_view_tktid");
+        var staffid = SessionStore.get("staffid");
+        console.log(staffid)
+        if (clientid == undefined) {
+
+        } else {
+           return TicketActivities.find({assignto:staffid});
+        }
+    },
     getService: function (serviceid) {
         var s = Services.findOne(serviceid);
         return s.name;
+    },
+     getStaffName: function (ticketid) {
+        var a = TicketActivities.findOne({ticketid: ticketid, event: 'SA'}, {sort: {timestamp: -1}});
+        if(Staffs.findOne(a.assignto)) {
+            return Staffs.findOne(a.assignto).name;
+        }else{
+            return "";
+        }
     },
     myOpenTickets: function (clientid) {
         // because the Session variable will most probably be undefined the first time
@@ -32,6 +60,11 @@ Template.staffAdminDashboard.events({
         var clientid = $(e.currentTarget).attr("clientid");
         //SessionStore.set("loading", true);
         SessionStore.set("ticket_view_clientid", clientid);
+    },
+    'click a#tktid': function (e, t) {
+         var clientid = $(e.currentTarget).attr("clientid");
+        //SessionStore.set("loading", true);
+        SessionStore.set("ticket_view_tktid", clientid);
     },
     'change #sel2': function (e, t) {
         var ticketid = $(e.currentTarget).attr("ticketid");

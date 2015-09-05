@@ -18,7 +18,10 @@ Template.ticketview.events({
         Meteor.call('rateTicket', ticketid, star, SessionStore.get("myid"), function (error, result) {
             SessionStore.set("loading", false);
             console.log(result);
-           
+           var type=SessionStore.get("logintype");
+           if(type=="STAFF"){
+               alert(result.message);
+           }
         });
     },
     'click a#close': function (e, t) {
