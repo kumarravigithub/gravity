@@ -25,7 +25,7 @@
             <div class="col-md-8 " >
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Ticket List <a href="/home" class="btn-small btn-info pull-right">Login As {{#with allTickets}}{{clientid}}{{/with}}</a>
+                        Ticket List 
                     </div>
 
                     {{#each allTickets}}
@@ -37,6 +37,7 @@
                                             <span class="label label-danger">{{getStaffName _id}}</span>  
                                             <span class="label label-info">  {{getService serviceid}}</span></small></footer></a>
                             </div>
+                            {{#if isAdmin}}
                             <div class="col-md-4">
                                 <select class="form-control" id="sel2" ticketid="{{_id}}">
                                     <option>--Select Staff--</option>
@@ -45,6 +46,7 @@
                                     {{/each}}
                                 </select> 
                             </div>
+                            {{/if}}
                         </div>
                     </div>
                     {{/each}} 

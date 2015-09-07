@@ -44,7 +44,7 @@ Template.staffAdminDashboard.helpers({
         }else{
             return "";
         }
-    },
+    },   
     myOpenTickets: function (clientid) {
         // because the Session variable will most probably be undefined the first time
         return Tickets.find({status: 'OPEN', clientid: clientid});
