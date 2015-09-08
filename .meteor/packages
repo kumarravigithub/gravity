@@ -21,3 +21,7 @@ houston:admin
 http
 meteorhacks:kadira
 meteorhacks:kadira-profiler
+meteorhacks:npm
+
+
+npm-container

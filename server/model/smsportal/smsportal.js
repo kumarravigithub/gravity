@@ -1,20 +1,20 @@
 Meteor.methods({
-     'smsPortalDetails': function (staffname, mobile, email, msg, sessionid) {
-      
+    'smsPortalDetails': function (staffname, mobile, email, msg, sessionid) {
+
         try {
-           var res= sendSMStoFarmer("cybuzzsc","del12345@",mobile,"CYBUZZ",msg);
-           console.log(res);
-           if(res){
-            var inserted = Sms.insert({
-                name: staffname,
-                mobileno:mobile,
-                email: email,
-                message: msg,
-                status:"SEND",
-                timestamp: new Date()
-            });
+            var res = sendSMStoFarmer("cybuzzsc", "del12345@", mobile, "CYBUZZ", msg);
+            console.log(res);
+            if (res) {
+                var inserted = Sms.insert({
+                    name: staffname,
+                    mobileno: mobile,
+                    email: email,
+                    message: msg,
+                    status: "SEND",
+                    timestamp: new Date()
+                });
+            }
         }
-    }
         catch (error) {
             console.log("Could not insert due to " + error);
             return returnFaliure("Error in sending SMS. " + error);
@@ -24,7 +24,10 @@ Meteor.methods({
             console.log("The inserted record has _id: " + inserted);
             return returnSuccess("SMS send successfully.");
         }
-        }
+    },
+    'sendEmail': function () {
+        sendMailNewTicketClient(["anima@cybuzzsc.com","techsavy.ravi@gmail.com"],"11212","Obligation not going","asjdka djkasdjkasjd kasjdka sjdkas jd ajdka jdksaj");
+    }
 });
 
 function sendSMStoFarmer(Username, Password, To, From, Text) {
