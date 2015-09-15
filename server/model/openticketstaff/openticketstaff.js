@@ -20,6 +20,11 @@ Meteor.methods({
         }
 
         if (inserted) {
+            var clientemail = Clients.findOne(clientid).email;
+            var clientname = Clients.findOne(clientid).name;
+            
+            sendMailNewTicketClient(clientemail, id, subject, detail);
+            sendMailNewTicketStaff(clientname, id, subject, detail);
             console.log("The inserted record has _id: " + inserted);
             return returnSuccess("Ticket saved successfully. Find Ticket ID in the data field of this JSON", id);
         }

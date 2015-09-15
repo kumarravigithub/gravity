@@ -1,12 +1,13 @@
 Meteor.methods({
     'createActivity': function (ticketid, comment, sessionid) {
         try {
-            console.log(ticketid, comment)
+            console.log(ticketid, comment);
+            var logintype = sessionGet(sessionid, 'logintype');
             var inserted = TicketActivities.insert({
                 ticketid: ticketid,
                 event: 'CC',
                 userid: sessionGet(sessionid, 'id'),
-                usertype: sessionGet(sessionid, 'logintype'),
+                usertype: logintype,
                 comment: comment,
                 isInternal: false,
                 timestamp: new Date()
@@ -17,6 +18,20 @@ Meteor.methods({
             return returnFaliure(error + " Comment Error");
         }
         if (inserted) {
+            var ticket = Tickets.findOne(ticketid);
+            var clientid = ticket.clientid;
+            var number = ticket.number;
+            var client = Clients.findOne(clientid);
+            var clientemail = client.email;
+            var clientname = client.name;
+
+            if (logintype == "STAFF") {
+                sendMailNewCommentClient(clientemail, number, comment);
+                sendMailNewCommentStaff(number, clientname, comment);
+            } else {
+                sendMailNewCommentStaff(number, clientname, comment);
+            }
+
             console.log("The inserted record has _id: " + inserted);
             return returnSuccess("Comment saved successfully");
         }

@@ -29,8 +29,10 @@ Meteor.methods({
         }
 
         if (inserted) {
+            sendMailNewTicketClient(sessionGet(sessionid, 'email'), id, subject, detail);
+            sendMailNewTicketStaff(sessionGet(sessionid, 'name'), id, subject, detail);
             console.log("The inserted record has _id: " + inserted);
-            return returnSuccess("Ticket saved successfully. Find Ticket ID in the data field of this JSON", id);
+            return returnSuccess("Ticket saved successfully", id);
         }
     }
 });

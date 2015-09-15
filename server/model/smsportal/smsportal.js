@@ -26,7 +26,12 @@ Meteor.methods({
         }
     },
     'sendEmail': function () {
-        sendMailNewTicketClient(["anima@cybuzzsc.com","techsavy.ravi@gmail.com"],"11212","Obligation not going","asjdka djkasdjkasjd kasjdka sjdkas jd ajdka jdksaj");
+//        sendMailNewCommentClient();
+//        sendMailNewCommentStaff();
+//        sendMailNewTicketClient();
+//        sendMailNewTicketStaff();
+//        sendMailTicketClosedClient();
+       // sendMailTicket();
     }
 });
 
